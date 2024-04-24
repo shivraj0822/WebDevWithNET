@@ -1,0 +1,32 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    
+</div>
+
+
+<p> The number from 1 to 1000 is given below:</p>
+  @for (int i = 0; i <= 1000; i++) 
+{
+  @i <text>,</text>
+  
+}
+<br>
+<br>
+<br>
+<p>Multiplication table of 45 is</p>
+@for (int i =0; i <=10; i++)
+{
+  int answer = 45 * i;
+    @($"{45} * {i} = {answer}")
+
+  <br>
+}
+
+
+
