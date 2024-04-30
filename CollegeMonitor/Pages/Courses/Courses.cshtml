@@ -1,0 +1,31 @@
+@page "/courses"
+@model CoursesModel
+<h2>List of all courses</h2>
+<a href="/courses/create" class="btn btn-success"><i class="bi bi-plus-lg"></i> New Course</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">S/N</th>
+      <th scope="col">Name</th>
+      <th scope="col">TextBook</th>
+      <th scope="col">CreditHrs</th>
+      <th scope="col">Edit/Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach(var course in Model.Courses)
+    {
+        <tr>
+            
+            <td>@course.Id</td>
+            <td>@course.Name</td>
+            <td>@course.TextBook</td>
+            <td>@course.CreditHrs</td>
+            <td>
+              <a href="/courses/edit/@course.Id" class="btn btn-primary"><i class="bi bi-pencil-square"></i> </a>
+            <a href="/courses/delete/@course.Id" class="btn btn-danger"><i class="bi bi-archive"></i></a> 
+             </td>
+        </tr>
+    }
+  </tbody>
+</table>
